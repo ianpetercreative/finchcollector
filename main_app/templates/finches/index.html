@@ -3,22 +3,27 @@
 {% block content %}
 
 <h1>Finch List</h1>
+<p><em>Click on a finch to view more details!</em></p>
 
-{% for finch in finches %}
-<div>
-    <a href="{% url 'detail' finch.id %}">
-        <div>
-            <span>{{ finch.name }}</span>
-            <p>Breed: {{ finch.breed }}</p>
-            <p>Description: {{ finch.description }}</p>
-            {% if finch.age > 0 %}
-            <p>Age: {{ finch.age }}</p>
-            {% else %}
-            <p>Age: Chick</p>
-            {% endif %}
+<div class="container">
+    <div class="row justify-content-around">
+        {% for finch in finches %}
+        <div class="card col-md-3 mb-3">
+            <a href="{% url 'detail' finch.id %}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ finch.name }}</h5>
+                    <p class="card-text">Breed: {{ finch.breed }}</p>
+                    <p class="card-text">Description: {{ finch.description }}</p>
+                    {% if finch.age > 0 %}
+                    <p class="card-text">Age: {{ finch.age }}</p>
+                    {% else %}
+                    <p class="card-text">Age: Chick</p>
+                    {% endif %}
+                </div>
+            </a>
         </div>
-    </a>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}
 
 {% endblock %}

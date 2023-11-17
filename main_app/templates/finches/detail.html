@@ -4,15 +4,18 @@
 
 <h1>Finch Details</h1>
 
-<div>
-    <div>
-        <span>{{ finch.name }}</span>
-        <p>Breed: {{ finch.breed }}</p>
-        <p>Description: {{ finch.description|linebreaks }}</p>
-        {% if finch.age > 0 %}
-        <p>Age: {{ finch.age }}</p>
-        {% else %}
-        <p>Age: Chick</p>
+<div class="card detail-page-card">
+    <div class="card-body">
+        <h5 class="card-title">{{ finch.name }}</h5>
+        <p class="card-text">Breed: {{ finch.breed }}</p>
+        <div>
+            <p class="card-text description-label">Description: </p>
+            <p class="description-text">{{ finch.description }}</p>
+        </div>
+            {% if finch.age > 0 %}
+            <p class="card-text">Age: {{ finch.age }}</p>
+            {% else %}
+        <p class="card-text">Age: Chick</p>
         {% endif %}
     </div>
 </div>
