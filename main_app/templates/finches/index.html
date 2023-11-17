@@ -6,9 +6,9 @@
 <p><em>Click on a finch to view more details!</em></p>
 
 <div class="container">
-    <div class="row justify-content-around">
+    <div class="row justify-content-around align-items-start">
         {% for finch in finches %}
-        <div class="card col-md-3 mb-3">
+        <div class="card mb-3 index-card">
             <a href="{% url 'detail' finch.id %}">
                 <div class="card-body">
                     <h5 class="card-title">{{ finch.name }}</h5>

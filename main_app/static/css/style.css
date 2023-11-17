@@ -45,6 +45,9 @@ main {
     margin: 15px;
 }
 
+#index-card {
+    width: 30%;
+}
 
 
 
@@ -53,6 +56,17 @@ main {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 90vw;
+        width: 90vw;
+    }
+    
+}
+
+    
+@media (max-width: 768px){
+    .index-card {
+        width: 100%;
     }
 }
+
+    
+ 

@@ -12,11 +12,15 @@
             <p class="card-text description-label">Description: </p>
             <p class="description-text">{{ finch.description }}</p>
         </div>
-            {% if finch.age > 0 %}
-            <p class="card-text">Age: {{ finch.age }}</p>
-            {% else %}
+        {% if finch.age > 0 %}
+        <p class="card-text">Age: {{ finch.age }}</p>
+        {% else %}
         <p class="card-text">Age: Chick</p>
         {% endif %}
+        <div class="card-action">
+            <a class="btn btn-sm btn-dark" href="{% url 'finches_update' finch.id %}">Edit</a>
+            <a class="btn btn-sm btn-dark" href="{% url 'finches_delete' finch.id %}">Delete</a>
+        </div>
     </div>
 </div>
 
