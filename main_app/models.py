@@ -2,11 +2,11 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
-# finches = [
-#     {'name': 'Sky', 'breed': 'Zebra Finch', 'description': 'cheerful singer', 'age': 1},
-#     {'name': 'Sunny', 'breed': 'Gouldian Finch', 'description': 'vibrant plumage', 'age': 2},
-#     {'name': 'Pippin', 'breed': 'Java Sparrow', 'description': 'playful and social', 'age': 1},
-# ]
+MEALS = (
+    ('B', 'Breakfast'),
+    ('L', 'Lunch'),
+    ('D', 'Dinner'),
+)
 
 class Finch(models.Model):
     name = models.CharField(max_length=100)
@@ -19,3 +19,17 @@ class Finch(models.Model):
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'finch_id': self.id})
+    
+
+class Feeding(models.Model):
+    date = models.DateField()
+    meal = models.CharField(
+        max_length=1,
+        choices=MEALS,
+        default=MEALS[0][0]
+    )
+
+    Finch = models.ForeignKey(Finch, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.get_meal_display()} on {self.date}"
