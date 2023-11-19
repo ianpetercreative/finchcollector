@@ -32,6 +32,12 @@
                         <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'toys_create' %}">Add a Toy</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'toys_index' %}">View All Toys</a>
+                    </li>
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'finches_create' %}">Add a Finch</a>
                     </li>
                     <li class="nav-item mx-2">
@@ -45,7 +51,7 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="card-footer text-muted fixed-bottom bg-dark" id="footer">
+    <footer class="card-footer fixed-bottom text-muted bg-dark" id="footer">
         <div>All Rights Reserved, &copy; 2021 Cat Collector &nbsp;</div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
