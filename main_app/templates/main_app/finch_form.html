@@ -8,9 +8,9 @@
     <h1>Add Finch</h1>
 {% endif %}
 
-<form class="table" action="" method="POST">
+<form action="" method="POST">
     {% csrf_token %}
-    <table>
+    <table class="table form-group">
         {{ form.as_table }}
     </table>
     <input type="submit" value="Submit" class="btn btn-outline-dark">
